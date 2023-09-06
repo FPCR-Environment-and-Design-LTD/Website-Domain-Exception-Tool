@@ -17,3 +17,5 @@
 # Test the function
 $domainInput = Read-Host -Prompt 'Enter the domain'
 Format-Domain -domain $domainInput
+
+Pause

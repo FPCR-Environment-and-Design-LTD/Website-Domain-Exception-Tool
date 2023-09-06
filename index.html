@@ -25,6 +25,8 @@
         </form>
     </div>
   </div>
+
+
 </section>
 
 <script>
@@ -32,6 +34,19 @@ function formatDomain() {
   let domain = document.getElementById("domain").value;
     // Strip off 'http://' or 'https://' if provided
     domain = domain.replace(/^http:\/\//, '').replace(/^https:\/\//, '');
+
+  let formats = [
+        '*.' + domain + '/*',
+        '*.' + domain,
+        '  ' + domain + '/*',
+        '  ' + domain
+    ];
+
+    // Output the different formats in a pop up
+    alert(formats.join('\n'));
+    
+
+
 
     // Output the different formats
     console.log('*.' + domain + '/*');

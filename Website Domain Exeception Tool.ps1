@@ -1,11 +1,11 @@
-function Format-Domain {
+﻿function Format-Domain {
     param (
         [Parameter(Mandatory=$true)]
         [string]$domain
     )
     
-    # Strip off 'http://' or 'https://' if provided
-    $domain = $domain -replace "^http://", "" -replace "^https://", ""
+    # Strip off 'http://', 'https://', and trailing slashes if provided
+    $domain = $domain -replace "^http://", "" -replace "^https://", "" -replace "/$", ""
 
     # Output the different formats
     "*.$domain/*"

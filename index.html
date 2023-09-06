@@ -3,7 +3,6 @@
   <head>
     <title>Website Exception Variation | FPCR </title>
     <script src="https://cdn.tailwindcss.com"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/heic2any/0.0.1/index.js" integrity="sha512-eEZcFEz8toxNm9+DHMf8Q3+wgZjU0no5THCktIEhCyKk3JEFhn/uUaDCXO5MP7VtvLJQ5/VcLZut7bAHQO1C8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
      <link rel="icon" type="image/x-icon" href="https://www.fpcr.co.uk/wp-content/uploads/FPCR.png">
      <meta name="viewport" content="width=device-width">
 
@@ -24,6 +23,8 @@
         <button type="submit" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onclick="formatDomain()">Submit</button>
         </form>
     </div>
+
+    <div id="table"></div>
   </div>
 
 
@@ -42,17 +43,20 @@ function formatDomain() {
         domain
     ];
 
-    // Output the different formats in a pop up
-    alert(formats.join('\n'));
+  // Add the different formats to a table on the page
+  
+  let table = document.getElementById("table");
+  let tableHTML = "<table class='table-auto'><thead><tr><th class='px-4 py-2'>Format</th><th class='px-4 py-2'>Copy</th></tr></thead><tbody>";
+
+  for (let i = 0; i < formats.length; i++) {
+    tableHTML += "<tr><td class='border px-4 py-2'>" + formats[i] + "</td><td class='border px-4 py-2'><button onclick='copyText(`" + formats[i] + "`)'>Copy</button></td></tr>";
+  }
+
+  tableHTML += "</tbody></table>";
+
+  table.innerHTML = tableHTML;
 
 
-
-
-    // Output the different formats
-    console.log('*.' + domain + '/*');
-    console.log('*.' + domain);
-    console.log('  ' + domain + '/*');
-    console.log('  ' + domain);
 }
 
 </script>

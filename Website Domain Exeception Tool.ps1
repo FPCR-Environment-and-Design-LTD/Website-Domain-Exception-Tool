@@ -1,4 +1,4 @@
-﻿function Format-Domain {
+function Format-Domain {
     param (
         [Parameter(Mandatory=$true)]
         [string]$domain
@@ -18,4 +18,15 @@
 $domainInput = Read-Host -Prompt 'Enter the domain'
 Format-Domain -domain $domainInput
 
-Pause
+
+$continue = $true
+
+while ($continue) {
+    $domainInput = Read-Host -Prompt 'Enter the domain'
+    Format-Domain -domain $domainInput
+
+    $choice = Read-Host "Do you want to enter another domain? (Y/N)"
+    if ($choice -ne "Y") {
+        $continue = $false
+    }
+}

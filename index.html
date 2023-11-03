@@ -26,7 +26,7 @@
         </form>
     </div>
 
-    <div class="table" id="table"></div>
+    <div class="table w-full" id="table"></div>
   </div>
 
 
@@ -52,7 +52,7 @@ function formatDomain() {
   // Add the different formats to a table on the page
   
   let table = document.getElementById("table");
-  let tableHTML = "<table class='table-auto'><thead><tr><th class='px-4 py-2'>Format</th><th class='px-4 py-2'>Copy</th></tr></thead><tbody>";
+  let tableHTML = "<table class='table-auto w-full'><thead><tr><th class='px-4 py-2'>Format</th><th class='px-4 py-2'>Copy</th></tr></thead><tbody>";
 
   for (let i = 0; i < formats.length; i++) {
     tableHTML += "<tr><td class='border px-4 py-2'>" + formats[i] + "</td><td class='border px-4 py-2'><button onclick='copyText(`" + formats[i] + "`)'>Copy</button></td></tr>";
